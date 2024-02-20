@@ -1,7 +1,3 @@
-'''Write a program: Write a program to count the number of primes less than some number. 
-Make a log plot of the number of primes less than ten, one hundred, a thousand, ten thousand, a hundred thousand and a million. 
-Predict the number of primes les than 10 million'''
-
 import numpy as np
 import matplotlib.pyplot as plt
 import math
