@@ -32,10 +32,14 @@ def main():
             print("Goodbye!")
     elif UserOption == "3":
         n = int(input("Enter the number of terms you want in the Fibonacci sequence: "))
-        print("Iterative Fibonacci sequence: ")
-        fibonacci_iterative(n)
-        print("Recursive Fibonacci sequence: ")
-        fibonacci_recursive(n)
+        print("Iterative Fibonacci sequence: \t| Recursive Fibonacci sequence:")
+        for i in range(n):
+            a_iterative, b_iterative = 0, 1
+            a_recursive, b_recursive = 0, 1
+            for j in range(i):
+                a_iterative, b_iterative = b_iterative, a_iterative + b_iterative
+                a_recursive, b_recursive = b_recursive, a_recursive + b_recursive
+            print(f"{a_iterative}\t\t\t\t| {a_recursive}")
         goAgain = input("Would you like to generate another sequence? Y/N: ")
         if goAgain == "Y" or goAgain == "y":
             main()
