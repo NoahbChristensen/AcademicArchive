@@ -105,6 +105,26 @@ Write a program that takes a list of integers from from the user
 The program will display the list 
 Then the Program will display the Highest Number, Lowest Number, Mean, Median, and Mode.'''
 
+import statistics
+
+def main():
+    num_list = []
+    while True:
+        num = input('Enter a number (or "f" to finish): ')
+        if num.lower() == 'f':
+            break
+        else:
+            num_list.append(int(num))
+    print(f'List: {num_list}')
+    print(f'Highest Number: {max(num_list)}')
+    print(f'Lowest Number: {min(num_list)}')
+    print(f'Mean: {statistics.mean(num_list)}')
+    print(f'Median: {statistics.median(num_list)}')
+    print(f'Mode: {statistics.mode(num_list)}')
+
+if __name__ == '__main__':
+    main()
+
 
 
     
