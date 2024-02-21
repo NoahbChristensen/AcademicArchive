@@ -1,6 +1,6 @@
 '''Dice Roll Program:
 Given an object, GVDie, and an integer that represents the total sum desired
-write a function roll_total() that displays the rolls it took to reach the desired total.'''
+write a function roll_total() that displays the rolls it took to reach the desired total.
 
 import random
 import time
@@ -43,4 +43,58 @@ def main():
             break
 
 if __name__ == '__main__':
+    main()'''
+
+'''Roll Pair Program:
+given two GVDie objects, and an integer that represents a desired value in the range of 1-6
+we are looking to see how many rolls it takes to get a pair of the desired value.
+Create a function roling_for_pair() that displays the rolls it took to reach the desired value.
+'''
+
+import random
+import time
+
+class GVDie:
+    def __init__(self):
+        self.my_value = random.randint(1, 6)
+        self.rand = random.Random()
+    
+    def roll(self):
+        self.my_value = self.rand.randint(1, 6)
+        return self.my_value
+    
+    def set_seed(self, seed):
+       self.rand.seed(seed)
+
+    def compare_to(self, other):
+        return self.my_value - other.my_value
+    
+    def rolling_for_pair(self, desired):
+        roll_count = 0
+        while True:
+            roll1 = self.roll()
+            roll2 = self.roll()
+            roll_count += 1
+            print(f'Roll {roll_count}: {roll1}, {roll2}')
+            if roll1 == desired and roll2 == desired:
+                break
+            time.sleep(0.35)
+        print(f'Total rolls: {roll_count}')
+        return roll_count
+    
+def main():
+    die1 = GVDie()
+    die2 = GVDie()
+    die1.set_seed(15)
+    die2.set_seed(15)
+    while True:
+        desired = int(input('Enter the desired value (1-6): '))
+        die1.rolling_for_pair(desired)
+        choice = input('Do you want to try another value? (y/n): ')
+        if choice.lower() != 'y':
+            break
+
+if __name__ == '__main__':
     main()
+    
+    
