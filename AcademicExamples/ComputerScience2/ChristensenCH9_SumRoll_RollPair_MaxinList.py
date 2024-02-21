@@ -49,7 +49,7 @@ if __name__ == '__main__':
 given two GVDie objects, and an integer that represents a desired value in the range of 1-6
 we are looking to see how many rolls it takes to get a pair of the desired value.
 Create a function roling_for_pair() that displays the rolls it took to reach the desired value.
-'''
+
 
 import random
 import time
@@ -95,6 +95,17 @@ def main():
             break
 
 if __name__ == '__main__':
-    main()
+    main()'''
+
+
+
+''' Max Number in List program:
+
+Write a program that takes a list of integers from from the user 
+The program will display the list 
+Then the Program will display the Highest Number, Lowest Number, Mean, Median, and Mode.'''
+
+
+
     
     
